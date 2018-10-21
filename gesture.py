@@ -8,6 +8,9 @@ import time
 keyboard = Controller()
 
 
+import pyautogui
+
+
 cap = cv2.VideoCapture(0)
      
 while(1):
@@ -114,14 +117,15 @@ while(1):
                 cv2.putText(frame,'Put hand in the box',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
             else:
                 if arearatio<12:
-                    ##cv2.putText(frame,'0',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+                    cv2.putText(frame,'0',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
 
                     '''time.sleep(5)
                     keyboard.press('c')
-                    keyboard.release('c')'''
+                    keyboard.release('c')
 
                     keyboard.press(Key.cmd)
                     keyboard.release(Key.cmd)
+                    break'''  
 
                 elif arearatio<17.5:
                     cv2.putText(frame,'Best of luck',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
@@ -130,7 +134,15 @@ while(1):
                     cv2.putText(frame,'1',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
                     
         elif l==2:
-            cv2.putText(frame,'2',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+            ##cv2.putText(frame,'2',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+
+            for i in range(2):
+                pyautogui.moveRel(100, 0, duration=0.25)
+                pyautogui.moveRel(0, 100, duration=0.25)
+                pyautogui.moveRel(-100, 0, duration=0.25)
+                pyautogui.moveRel(0, -100, duration=0.25)
+
+            break
             
         elif l==3:
          
@@ -140,7 +152,11 @@ while(1):
                     cv2.putText(frame,'ok',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
                     
         elif l==4:
-            cv2.putText(frame,'4',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+            ##cv2.putText(frame,'4',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+
+            keyboard.press(Key.cmd)
+            keyboard.release(Key.cmd)
+            break 
             
         elif l==5:
             cv2.putText(frame,'5',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
