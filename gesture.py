@@ -1,6 +1,13 @@
 import cv2
 import numpy as np
 import math
+
+
+from pynput.keyboard import Key, Controller
+import time
+keyboard = Controller()
+
+
 cap = cv2.VideoCapture(0)
      
 while(1):
@@ -107,7 +114,15 @@ while(1):
                 cv2.putText(frame,'Put hand in the box',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
             else:
                 if arearatio<12:
-                    cv2.putText(frame,'0',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+                    ##cv2.putText(frame,'0',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
+
+                    '''time.sleep(5)
+                    keyboard.press('c')
+                    keyboard.release('c')'''
+
+                    keyboard.press(Key.cmd)
+                    keyboard.release(Key.cmd)
+
                 elif arearatio<17.5:
                     cv2.putText(frame,'Best of luck',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
                    
