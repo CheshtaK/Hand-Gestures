@@ -125,6 +125,7 @@ while(1):
 
                     keyboard.press(Key.cmd)
                     keyboard.release(Key.cmd)
+
                     break'''  
 
                 elif arearatio<17.5:
